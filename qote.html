@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  background: linear-gradient(210deg,pink,purple);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background:rgba(255, 244, 244, 0.734);
+  margin: 20px;
+  width: 75%;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.quote {
+  font-size: 24px;
+  margin-top: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #339e1d;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.btn :hover
+{
+  background: #3498db;
+color: antiquewhite;
+}
+
+  </style>
+  <title>Quote Generator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="quote" id="quote">
+      "Start searching your quotes."
+    </div>
+    <button class="btn" id="generateBtn">Generate Quote</button>
+  </div>
+  <script>
+    const quotes = [
+      "We cannot solve problems with the kind of thinking we employed when we came up with them. — Albert Einstein",
+      "Learn as if you will live forever, live like you will die tomorrow. — Mahatma Gandhi",
+      "Stay away from those people who try to disparage your ambitions. Small minds will always do that, but great minds will give you a feeling that you can become great too. — Mark Twain",
+      "When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out. — Eleanor Roosevelt",
+      "When you change your thoughts, remember to also change your world. — Norman Vincent Peale",
+      "It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest. — Walter Anderson",
+      "Nature has given us all the pieces required to achieve exceptional wellness and health, but has left it to us to put these pieces together. — Diane McLaren",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "Innovation distinguishes between a leader and a follower. - Steve Jobs",
+  "Strive not to be a success, but rather to be of value. - Albert Einstein",
+  "The future depends on what you do today. - Mahatma Gandhi",
+  "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+];
+
+function getRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+}
+
+const generateBtn = document.getElementById("generateBtn");
+const quoteElement = document.getElementById("quote");
+
+generateBtn.addEventListener("click", () => {
+  const randomQuote = getRandomQuote();
+  quoteElement.textContent = randomQuote;
+});
+
+  </script>
+</body>
+</html>
